@@ -75,20 +75,3 @@ Expected wall time on a recent laptop (CPU only): ≲5 min per script.
 ```bash
 julia --project=. -e 'using Pkg; Pkg.test()'
 ```
-
-## Troubleshooting
-
-- **`Zygote.gradient` errors inside `supervised_loss`** — the most common
-  culprit is the SciMLSensitivity adjoint. Try setting
-  `sensealg=BacksolveAdjoint()` in `propagate_diff`.
-- **Inner loss not decreasing in script 02** — shrink the trust region
-  (`radius`) or shorten `t_grid`. Tadpole dynamics has period ~2π, so
-  `t_grid` past ~6 starts including significant rotation.
-- **Direct baseline diverges** — drop `lr` to 1e-3 and increase
-  `close_weight` in the outer loss.
-
-## What this code is *not* doing
-
-Models **natural** Trojan-region dynamics, not Lucy's spacecraft
-trajectory, Earth departure, gravity assists, or propulsion. Those
-problems are well served by multiple-shooting NLPs (MAE 195, Weeks 5–6).
