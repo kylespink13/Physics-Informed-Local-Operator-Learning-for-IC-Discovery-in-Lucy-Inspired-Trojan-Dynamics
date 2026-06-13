@@ -3,9 +3,7 @@
 Solver-in-the-loop bilevel local operator (BiLO) learning for
 initial-condition discovery in Lucy-inspired Trojan dynamics.
 
-Companion code for the MAE 195 (Space Systems Optimization, UC Irvine,
-Spring 2026) final project. The method studies the natural CR3BP
-dynamics in the Sun–Jupiter L4/L5 co-orbital region — where Jupiter's
+The method studies the natural CR3BP dynamics in the Sun–Jupiter L4/L5 co-orbital region — where Jupiter's
 Trojan asteroids (NASA's Lucy mission targets) live — and asks which
 initial conditions produce a prescribed qualitative behavior (tadpole,
 horseshoe, escape).
